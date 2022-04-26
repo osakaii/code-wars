@@ -1,0 +1,12 @@
+
+.App__h1{
+    text-align: center;
+    font-size: 80px;
+    font-family: 'lato', sans-serif;
+    border-radius: 5px;
+    margin: 20px 0;
+    color: rgb(189, 13, 13);
+}
+.App__content{
+    position: relative;
+}
