@@ -10,16 +10,18 @@ function UserRaw({ data, startDate, endDate }) {
 
   const getData = async () => {
     const responseUserData = await getUserInfo(data.userName);
-    let tempChallenges = responseUserData.data.filter(async (kata) => {
-      let completedDate = Date.parse(kata.completedAt);
-      if (
-        completedDate > Date.parse(startDate) &&
-        completedDate < Date.parse(endDate)
-      ) {
-        console.log(kata)
-        debugger
+    let tempChallenges = []
+    for(let i = 0; i < responseUserData.data.length; i++){
+        let completedDate = Date.parse(responseUserData.data[i].completedAt);
+          if (
+            completedDate > Date.parse(startDate) &&
+            completedDate < Date.parse(endDate)
+          ){
+              tempChallenges.push(responseUserData.data[i])
+          }else continue
+    }
+    tempChallenges = tempChallenges.map(async kata =>{
         return await getChallenge(kata.id);
-      }
     })
     Promise.all(tempChallenges).then((challenges) => {
       setChallenges(challenges);
@@ -54,13 +56,12 @@ function UserRaw({ data, startDate, endDate }) {
         return start;
       }, 0)
     );
-
   }, [challenges]);
 
   return (
     <div className="grid__raw">
       <div className="grid__rawItem">{data.name}</div>
-      <div className="grid__rawItem">{userData?.totalItems}</div>
+      <div className="grid__rawItem">{challenges.length}</div>
       <div className="grid__rawItem">{points}</div>
     </div>
   );
