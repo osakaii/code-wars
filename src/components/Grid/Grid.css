@@ -5,9 +5,11 @@
   margin: 0 auto;
   padding: 40px 0;
 }
-.header {
-  background-color: #95a5a6;
+#header {
+  background-color: rgb(29, 29, 29);
   font-size: 14px;
+  color: #a5dbcd;
   text-transform: uppercase;
+  font-weight: bold;
   letter-spacing: 0.03em;
 }

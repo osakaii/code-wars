@@ -11,10 +11,6 @@ export default function ParticlesWrapper() {
   const particlesLoaded = (container) => {
   };
 
-  const options = {
-    /* custom options */
-  };
-
   return (
     <Particles
       id="tsparticles"
@@ -51,7 +47,7 @@ export default function ParticlesWrapper() {
             value: "#ffffff",
           },
           links: {
-            color: "#ffffff",
+            color: "#C0FFEE",
             distance: 150,
             enable: true,
             opacity: 0.5,
@@ -61,14 +57,15 @@ export default function ParticlesWrapper() {
             enable: true,
           },
           move: {
-            direction: "none",
+            direction: "right",
             enable: true,
             outModes: {
-              default: "bounce",
+              default: "none",
             },
-            random: false,
-            speed: 3,
+            random: true,
+            speed: 1,
             straight: false,
+            bounce: false
           },
           number: {
             density: {
@@ -81,10 +78,15 @@ export default function ParticlesWrapper() {
             value: 0.5,
           },
           shape: {
-            type: "circle",
+            type:  ["circle","triangle","edge","polygon"],
           },
           size: {
             value: { min: 1, max: 5 },
+            anim: {
+              speed: 1,
+              enable: true,
+              sync: false,
+            }
           },
         },
         detectRetina: true,
