@@ -16,9 +16,6 @@ function App() {
   day = plusNull(day);
   const [endDate, setEndDate] = useState([year, month, day].join("-"));
 
-  useEffect(()=>{
-    console.log(startDate, endDate)
-  }, [startDate, endDate])
   return (
     <div className="App">
       <ParticlesWrapper />
