@@ -59,6 +59,7 @@ function UserRaw({ data, startDate, endDate }) {
   return (
     <div className="grid__raw">
       <div className="grid__rawItem">{data.name}</div>
+      <div className="grid__rawItem">{data.userName}</div>
       <div className="grid__rawItem">{challenges.length}</div>
       <div className="grid__rawItem">{points}</div>
       <div className="grid__rawItem">

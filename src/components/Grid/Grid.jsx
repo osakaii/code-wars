@@ -8,6 +8,7 @@ function Grid(props) {
     <div className="Grid">
       <div className="grid__raw" id="header">
         <div className="grid__rawItem">Name</div>
+        <div className="grid__rawItem">Username</div>
         <div className="grid__rawItem">Count</div>
         <div className="grid__rawItem">Point</div>
         <div className="grid__rawItem">Info</div>
