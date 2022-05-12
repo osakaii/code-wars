@@ -10,6 +10,7 @@ function Grid(props) {
         <div className="grid__rawItem">Name</div>
         <div className="grid__rawItem">Count</div>
         <div className="grid__rawItem">Point</div>
+        <div className="grid__rawItem">Info</div>
       </div>
       {USERS_DATA.map((el, index) => {
         return <UserRaw data={el} key={el.name + el.id} startDate= {props.startDate} endDate = {props.endDate} />;
