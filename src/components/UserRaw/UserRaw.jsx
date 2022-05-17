@@ -63,7 +63,7 @@ function UserRaw({ data, startDate, endDate }) {
       <div className="grid__rawItem">{challenges.length}</div>
       <div className="grid__rawItem">{points}</div>
       <div className="grid__rawItem">
-        <button disabled={loading} onClick={handleOpenInfo}>Info</button>
+        <button disabled={loading} onClick={handleOpenInfo} className="button">Info</button>
       </div>
     </div>
   );

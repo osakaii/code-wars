@@ -14,3 +14,12 @@
     font-size: 33px;
     text-align: center;
 }
+.button{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(47, 47, 47);
+    font-size: 22px;
+    text-transform: uppercase;
+    color: white;
+}
