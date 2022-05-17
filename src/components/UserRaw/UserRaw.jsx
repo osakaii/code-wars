@@ -1,14 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import "./UserRaw.css";
 import { getChallenge, getUserInfo } from "../../axios";
+import { POINTS } from "../../consts/points";
 
 function UserRaw({ data, startDate, endDate }) {
-  const [userData, setUserData] = useState({});
   const [challenges, setChallenges] = useState([]);
-  const [challengesCount, setChallengesCount ] = useState(0)
   const [points, setPoints] = useState(0);
+  const [loading, setLoading] = useState(false);
 
-  const getData = async () => {
+  const getData = useCallback(async () => {
+    setLoading(true)
     const responseUserData = await getUserInfo(data.userName);
     let tempChallenges = []
     
@@ -26,44 +27,44 @@ function UserRaw({ data, startDate, endDate }) {
     })
     Promise.all(tempChallenges).then((challenges) => {
       setChallenges(challenges);
+      setLoading(false)
     });
-    setUserData(responseUserData);
-  };
-  useEffect(() => {
-    getData();
-  }, [startDate, endDate]);
+  }, [data?.userName, endDate, startDate])
 
   useEffect(() => {
-    console.log("challange", challenges);
+    getData();
+  }, [getData]);
+
+  useEffect(() => {
     setPoints(
       challenges?.reduce((start, el) => {
-        switch (el?.rank?.name) {
-          case "8 kyu":
-            start += 10;
-            break;
-          case "7 kyu":
-            start += 20;
-            break;
-          case "6 kyu":
-            start += 30;
-            break;
-          case "5 kyu":
-            start += 40;
-            break;
-          case "4 kyu":
-            start += 50;
-            break;
-        }
+        start += POINTS[el?.rank?.name]
         return start;
       }, 0)
     );
   }, [challenges]);
 
+  const handleOpenInfo = () => {
+    const result = {}
+    challenges.forEach(c => {
+      if (!result[c.rank.name]) {
+        result[c.rank.name] = 1
+      } else {
+        result[c.rank.name] += 1
+      }
+    })
+    alert(JSON.stringify(result))
+  }
+
   return (
     <div className="grid__raw">
       <div className="grid__rawItem">{data.name}</div>
+      <div className="grid__rawItem">{data.userName}</div>
       <div className="grid__rawItem">{challenges.length}</div>
       <div className="grid__rawItem">{points}</div>
+      <div className="grid__rawItem">
+        <button disabled={loading} onClick={handleOpenInfo}>Info</button>
+      </div>
     </div>
   );
 }
