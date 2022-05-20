@@ -38,7 +38,7 @@ function UserRaw({ data, startDate, endDate }) {
   useEffect(() => {
     setPoints(
       challenges?.reduce((start, el) => {
-        start += POINTS[el?.rank?.name]
+        start += Number(POINTS[el?.rank?.name])
         return start;
       }, 0)
     );

@@ -28,6 +28,46 @@ export let USERS_DATA = [
         name: "Алтынбек",
         userName: "AltynKasym"
     },
+    {
+        name: "Нурсултан",
+        userName: "bakytov_oo"
+    },
+    {
+        name: "Нуралим",
+        userName: "Nuralim"
+    },
+    {
+        name: "Бахтияр",
+        userName: "b.ilyazov"
+    },
+    {
+        name: "Болобек",
+        userName: "bolotbekMM"
+    },
+    {
+        name: "Жолдошов Бакай",
+        userName: "bakai04"
+    },
+    {
+        name: "Динара",
+        userName: "stamkulova-dinara"
+    },
+    {
+        name: "Atay ",
+        userName: "Atay :)"
+    },
+    {
+        name: "Aman Mamashov",
+        userName: "aman009006"
+    },
+    {
+        name: "Israilov Sardor",
+        userName: "IsrailovSardor"
+    },
+    {
+        name: "Эстебес Мукамбетов",
+        userName: "estebes"
+    },
 ]
 
 USERS_DATA = USERS_DATA.map((el,index)=>{
