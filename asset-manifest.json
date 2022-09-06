@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/code-wars/static/css/main.fbf9c5ba.css",
-    "main.js": "/code-wars/static/js/main.9ae20fdd.js",
+    "main.js": "/code-wars/static/js/main.da76a809.js",
     "static/js/937.e4a5518b.chunk.js": "/code-wars/static/js/937.e4a5518b.chunk.js",
     "index.html": "/code-wars/index.html",
     "main.fbf9c5ba.css.map": "/code-wars/static/css/main.fbf9c5ba.css.map",
-    "main.9ae20fdd.js.map": "/code-wars/static/js/main.9ae20fdd.js.map",
+    "main.da76a809.js.map": "/code-wars/static/js/main.da76a809.js.map",
     "937.e4a5518b.chunk.js.map": "/code-wars/static/js/937.e4a5518b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.fbf9c5ba.css",
-    "static/js/main.9ae20fdd.js"
+    "static/js/main.da76a809.js"
   ]
 }
