@@ -6,7 +6,8 @@ import { useEffect, useState } from "react";
 function App() {
 
   //Настройка выбора даты
-  const [startDate, setStartDate] = useState('2022-05-17');
+  
+  const [startDate, setStartDate] = useState('2022-08-08');
   const nowDate = new Date();
   const plusNull = (number) => (number < 10 ? "0" + number : number);
   let year = nowDate.getFullYear();
