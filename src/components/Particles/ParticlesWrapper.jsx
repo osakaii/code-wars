@@ -2,6 +2,7 @@ import React from "react";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 import './Particles.css'
+import favicon from "../../consts/favicon32.jpeg";
 
 export default function ParticlesWrapper() {
   const particlesInit = async (main) => {
@@ -12,6 +13,7 @@ export default function ParticlesWrapper() {
   };
 
   return (
+    <>
     <Particles
       id="tsparticles"
       init={particlesInit}
@@ -92,5 +94,7 @@ export default function ParticlesWrapper() {
         detectRetina: true,
       }}
     />
+      <img src={favicon} style={{position: "absolute", width: "100vw", height: "100vh"}}/>
+    </>
   );
 }
